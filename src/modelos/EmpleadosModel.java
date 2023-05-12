@@ -4,6 +4,9 @@
  */
 package modelos;
 
+import java.sql.*;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author diego
@@ -13,6 +16,12 @@ public class EmpleadosModel {
     String Apellidos;
     String Nombre;
     String Telefono;
+    Conexion nuevaConexion;
+    Connection myConexion;
+    ResultSet rst;
+
+    public EmpleadosModel() {
+    }
 
     public EmpleadosModel(String Codigo, String Apellidos, String Nombre, String Telefono) {
         this.Codigo = Codigo;
@@ -53,5 +62,18 @@ public class EmpleadosModel {
         this.Telefono = Telefono;
     }
     
-    
+    public ResultSet ListarDatos(){
+        try
+        {
+          myConexion = nuevaConexion.Conectar();
+          Statement sentencia = myConexion.createStatement();
+          rst = sentencia.executeQuery("Select * from Empleados");
+          return rst;
+        }
+        catch(SQLException e)
+        {
+            JOptionPane.showMessageDialog(null, "no se pudo listar empleados");
+            return rst;
+        }
+    }
 }

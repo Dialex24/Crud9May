@@ -10,16 +10,18 @@ import javax.swing.*;
 public class Conexion {
     Connection conexion;
     
-    public Connection Conectar(String user, String pass){
+    public Connection Conectar(){
         try
         {
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-            String nombre_servidor= "127.0.0.1";
+            String nombre_servidor= "168.234.74.80";
             String puerto = "1521";
-            String sid = "xe";
+            String sid = "umg";
             String url ="jdbc:oracle:thin:@"+nombre_servidor+":"+puerto+":"+sid;
             
-            conexion = DriverManager.getConnection(url,user,pass);
+            String usuario = "HA20";
+            String password= "Umg$2023";
+            conexion = DriverManager.getConnection(url,usuario,password);
                 
             JOptionPane.showMessageDialog(null, "Conexion Correcta");
             
