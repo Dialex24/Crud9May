@@ -13,6 +13,7 @@ public class Conexion {
     public Connection Conectar(){
         try
         {
+       JOptionPane.showMessageDialog( null, "entrando a conectar");
             DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
             String nombre_servidor= "168.234.74.80";
             String puerto = "1521";

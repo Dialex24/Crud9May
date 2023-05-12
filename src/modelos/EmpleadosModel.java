@@ -63,8 +63,10 @@ public class EmpleadosModel {
     }
     
     public ResultSet ListarDatos(){
+        
         try
         {
+          
           myConexion = nuevaConexion.Conectar();
           Statement sentencia = myConexion.createStatement();
           rst = sentencia.executeQuery("Select * from Empleados");

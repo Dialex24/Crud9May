@@ -28,11 +28,12 @@ public class empleadosController implements ActionListener {
        this.VistaEmpleados.btnEditar.addActionListener(this);
        this.VistaEmpleados.btnElimonar.addActionListener(this);
        
-       //levantar la vista empleados
-       this.VistaEmpleados.setVisible(true);
-       
        //realizar la conexion
        this.ModeloEmpleados.ListarDatos();
+      
+       //levantar la vista empleados
+       this.VistaEmpleados.setVisible(true);
+
        //levantar el modelo y lograr recorrer el resultset
     }
     
